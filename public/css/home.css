@@ -1,0 +1,136 @@
+
+ /* style.css */
+
+/* Welcome Message */
+.jumbotron {
+    background-color: #f8f9fa; /* Set a light background color */
+    padding: 50px; /* Add padding for better spacing */
+    border-radius: 15px; /* Add rounded corners to the jumbotron */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.jumbotron h1 {
+    color: #007bff; /* Set the color of the main heading */
+}
+
+.jumbotron p {
+    font-size: 18px; /* Adjust the font size of paragraphs */
+}
+
+/* Additional Styling */
+.container {
+    max-width: 900px; /* Set a wider maximum width for better readability */
+    margin: auto; /* Center the container */
+}
+
+/* Add any additional styles based on your design preferences */
+
+
+
+
+
+
+
+
+
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #c5dbf1; /* Sidebar background color */
+    padding-top: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Sidebar box shadow */
+}
+
+.logo img {
+    width: 80%; /* Adjust the logo width as needed */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #495057; /* Border color between menu items */
+    
+}
+
+.navigation a {
+    text-decoration: none;
+    color: black; /* Menu item text color */
+    font-size: 18px; /* Menu item font size */
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #007bff; /* Menu item text color on hover */
+}
+
+/* Adjust the content area to leave space for the sidebar */
+.main-content {
+        width: 100%; /* You can adjust this value based on your design preferences */
+        margin: 0 auto; /* Center the main content */
+        flex: 1; /* Let the main content flex to fill the available space */
+   
+}
+
+
+
+
+
+
+
+
+/* Reservation Form Styles */
+.reservation-form {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #c5dbf1; /* Background color of the reservation form */
+    padding: 20px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1); /* Box shadow on the right side */
+}
+
+.reservation-form h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label {
+    margin-bottom: 5px;
+}
+
+.reservation-form input,
+.reservation-form button {
+    margin-bottom: 15px;
+}
+
+.reservation-form button {
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}

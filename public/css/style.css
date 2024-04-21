@@ -1,0 +1,35 @@
+.card-img-top{
+    /* border-radius: rem !important; var(--bs-card-inner-border-radius); */
+    width: 100%;
+    object-fit: cover !important;
+}
+
+.card{
+
+        border:none !important;
+        margin-bottom: 2rem;
+    
+}
+
+.card:hover {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+
+    .card-img:hover {
+        transform: scale(1.1); /* Scale up the image */
+        transition: transform 0.3s ease; /* Add a smooth transition effect */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    }
+    
+ .cour{
+    height: 300px;
+    width: 300px;
+ }
+
+ .d-block{
+    height: 500px;
+    width: 80px;
+ }
+ 

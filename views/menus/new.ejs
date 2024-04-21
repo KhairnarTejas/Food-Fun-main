@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+    <h1>Create New Menu Item</h1>
+    <form action="/menu" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+            <div class="invalid-feedback">
+                Please provide a name for the menu item.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            <div class="invalid-feedback">
+                Please provide a description for the menu item.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="foodType" class="form-label">Food Type</label>
+            <select class="form-select" id="foodType" name="foodType" required>
+                <option value="" selected disabled>Select Food Type</option>
+                <option value="veg">Vegetarian</option>
+                <option value="non-veg">Non-Vegetarian</option>
+                <option value="maharashtrian">Maharashtrian</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a food type for the menu item.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="speciality" class="form-label">Speciality</label>
+            <input type="text" class="form-control" id="speciality" name="speciality" required>
+            <div class="invalid-feedback">
+                Please provide a speciality for the menu item.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+            <div class="invalid-feedback">
+                Please provide a price for the menu item.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="image" name="menu[image]" accept="image/*" required>
+            <div class="invalid-feedback">
+                Please choose an image for the menu item.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Menu Item</button>
+    </form>
+</div>
+
+<script>
+    // Example of client-side form validation using Bootstrap's built-in form validation
+    // You can customize this according to your requirements
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>

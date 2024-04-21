@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    a {
+    text-decoration: none;
+  }
+  .card-body {
+    height: 250px; /* Adjust this value as needed */
+    overflow: hidden;
+  }
+  .card-img {
+    height: 300px;
+  }
+  span {
+    content: "\20B9";
+  }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <% allMenus.forEach(menu => { %>
+            <div class="col-md-4 mt-5">
+                <div class="card h-100" style="background: linear-gradient(45deg, #B2EBF2, #81D4FA);">
+                    <img src="<%= menu.image.url %>" class="card-img-top img-fluid card-img" alt="<%= menu.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= menu.name %></h5>
+                        <p class="card-text"><%= menu.description %></p>
+                        <p class="card-text"><strong>Specialty:</strong> <%= menu.speciality %></p>
+                        <p class="card-text"><strong>Food Type:</strong> <%= menu.foodType %></p>
+                        <p class="card-text">
+                            <strong> <%= menu.price %></strong> <b><span>&#8377;</span></b>
+                          </p>
+                        <!-- <a href="/orderfood">
+                            <button type="button" class="btn btn-primary">Order Now</button>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

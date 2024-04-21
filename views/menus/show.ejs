@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mb-3" style="background: linear-gradient(45deg, #B2EBF2, #81D4FA); margin-top: 20px;">
+                <img src="<%= menuItem.image.url %>" class="card-img-top img-fluid" alt="<%= menuItem.name %>" style="height: 300px; object-fit: cover;">
+                <div class="card-body text-center" style="padding: 20px;">
+                    <h5 class="card-title"><%= menuItem.name %></h5>
+                    <p class="card-text"><%= menuItem.description %></p>
+                    <p class="card-text"><strong>Specialty:</strong> <%= menuItem.speciality %></p>
+                    <p class="card-text"><strong>Food Type:</strong> <%= menuItem.foodType %></p>
+                    <p class="card-text">
+                        <strong> <%= menuItem.price %></strong> <b><span>&#8377;</span></b>
+                      </p>
+                    <div class="d-flex justify-content-center">
+                        <div class="btn-group" role="group" aria-label="menu Actions">
+                            <a href="/menu/<%= menuItem._id %>/edit" class="btn btn-primary mx-2 mr-2">Edit</a>
+                            <form action="/menu/<%= menuItem._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger mx-2">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
