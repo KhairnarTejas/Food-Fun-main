@@ -14,20 +14,29 @@
     content: "\20B9";
   }
 </style>
+
+<script>
+  // JavaScript function to remove successMsg after a certain period of time
+  setTimeout(function() {
+    const successMsg = document.querySelector('.alert-success');
+    if (successMsg) {
+      successMsg.remove();
+    }
+  }, 5000); // Remove successMsg after 5 seconds (adjust as needed)
+</script>
+
 <div class="container mt-5">
+  <% if (successMsg) { %>
+    <div class="alert alert-success" role="alert">
+      <%= successMsg %>
+    </div>
+  <% } %>
   <div class="row">
     <% allMenus.forEach(menu => { %>
     <div class="col-md-4 mt-4">
       <a href="/menu/<%= menu._id %>" class="listing-link">
-        <div
-          class="card mb-4"
-          style="background: linear-gradient(45deg, #b2ebf2, #81d4fa)"
-        >
-          <img
-            src="<%= menu.image.url %>"
-            class="card-img-top img-fluid card-img"
-            alt="<%= menu.name %>"
-          />
+        <div class="card mb-4" style="background: linear-gradient(45deg, #b2ebf2, #81d4fa)">
+          <img src="<%= menu.image.url %>" class="card-img-top img-fluid card-img" alt="<%= menu.name %>">
           <div class="card-body">
             <h5 class="card-title"><%= menu.name %></h5>
             <p class="card-text"><%= menu.description %></p>
@@ -38,11 +47,11 @@
               <strong>Food Type:</strong> <%= menu.foodType %>
             </p>
             <p class="card-text">
-              <strong> <%= menu.price %></strong> <b><span>&#8377;</span></b>
+              <strong><b><span>&#8377;</span></b> <%= menu.price %></strong> 
             </p>
             <!-- <a href="/orderfood">
-                            <button type="button" class="btn btn-primary">Order Now</button>
-                        </a> -->
+              <button type="button" class="btn btn-primary">Order Now</button>
+            </a> -->
           </div>
         </div>
       </a>

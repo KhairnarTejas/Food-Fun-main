@@ -1,39 +1,107 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Food & Fun</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <!-- <li class="nav-item">
+  <div class="container">
+    <a class="navbar-brand" href="/">Food & Fun</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <!-- <li class="nav-item">
                     <a class="nav-link" href="/stay">Stay</a>
                 </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/menu">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            All
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgb(97, 175, 244);">
-                            <a class="dropdown-item" href="/menu/veg" onmouseover="this.style.backgroundColor='green';" onmouseout="this.style.backgroundColor='transparent';">Veg</a>
-                            <a class="dropdown-item" href="/menu/nonveg" onmouseover="this.style.backgroundColor='red';" onmouseout="this.style.backgroundColor='transparent';">Non Veg</a>
-                            <a class="dropdown-item" href="/menu/maharashtrian" onmouseover="this.style.backgroundColor='orange';" onmouseout="this.style.backgroundColor='transparent';">Maharashtrian Food</a>
-                        </div>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/menu/new">Add menu</a>
-                        </li>
-                        
-                    </div>
-                </li>
-            </ul>
-            
+        <li class="nav-item">
+          <a class="nav-link" href="/menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button
+              class="btn btn-info dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              All
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              style="background-color: rgb(97, 175, 244)"
+            >
+              <a
+                class="dropdown-item"
+                href="/menu/veg"
+                onmouseover="this.style.backgroundColor='green';"
+                onmouseout="this.style.backgroundColor='transparent';"
+                >Veg</a
+              >
+              <a
+                class="dropdown-item"
+                href="/menu/nonveg"
+                onmouseover="this.style.backgroundColor='red';"
+                onmouseout="this.style.backgroundColor='transparent';"
+                >Non Veg</a
+              >
+              <a
+                class="dropdown-item"
+                href="/menu/maharashtrian"
+                onmouseover="this.style.backgroundColor='orange';"
+                onmouseout="this.style.backgroundColor='transparent';"
+                >Maharashtrian Food</a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- Check if user is authenticated -->
+      <div class="navbar-nav ms-auto">
+        <% if (currentUser) { %>
+        <div class="dropdown">
+          <button
+            class="btn dropdown-toggle"
+            type="button"
+            id="userDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <%= currentUser.username %>
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="userDropdown"
+          >
+            <li>
+              <a class="dropdown-item" href="/userinfo"><%= currentUser.email %></a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <% if (currentUser.username === 'tejas' && currentUser.email ===
+            'tejasdk2004@gmail.com') { %>
+            <li>
+              <a class="dropdown-item" href="/menu/new">Add new Menu</a>
+            </li>
+            <% } %>
+            <li><a class="dropdown-item" href="/logout">Log out</a></li>
+          </ul>
         </div>
+        <% } else { %>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+      </div>
     </div>
+  </div>
 </nav>

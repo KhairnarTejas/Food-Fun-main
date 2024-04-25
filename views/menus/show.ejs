@@ -15,10 +15,12 @@
                       </p>
                     <div class="d-flex justify-content-center">
                         <div class="btn-group" role="group" aria-label="menu Actions">
+                            <% if (currentUser && currentUser.username === 'tejas' && currentUser.email === 'tejasdk2004@gmail.com') { %>
                             <a href="/menu/<%= menuItem._id %>/edit" class="btn btn-primary mx-2 mr-2">Edit</a>
                             <form action="/menu/<%= menuItem._id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="btn btn-danger mx-2">Delete</button>
                             </form>
+                            <% } %>
                         </div>
                     </div>
                 </div>

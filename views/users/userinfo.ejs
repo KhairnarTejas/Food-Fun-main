@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") %>  
+<style>
+    
+
+    .card {
+        margin-top: 100px; /* Adjust margin as needed */
+        transition: transform 0.3s, box-shadow 0.3s;
+        z-index: 1; /* Ensure card stays above other elements */
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Navbar content -->
+    </nav>
+
+    <div class="container">
+        <div class="card my-4"> <!-- Added Bootstrap class `my-4` for top margin -->
+            <h1 class="card-header bg-primary text-white">Your Information</h1>
+             <!-- Added Bootstrap classes for header -->
+            <div class="card-body">
+                <div class="user-info">
+                    <p><strong>Username:</strong> <%= user.username %></p>
+                    <p><strong>Email:</strong> <%= user.email %></p>
+                    <!-- Add more user information as needed -->
+                </div>
+                <a href="/logout">
+                    <button type="submit" class="btn btn-danger">Logout</button> <!-- Added Bootstrap classes for button -->
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

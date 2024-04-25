@@ -6,7 +6,9 @@ const mongoose = require("mongoose");
 exports.index = async (req, res) => {
     try {
         const allMenus = await menu.find({});
+
         res.render("menus/menu", { allMenus });
+
     } catch (error) {
         console.error("Error fetching menus:", error);
         res.status(500).send("Internal Server Error");
@@ -60,10 +62,13 @@ exports.createMenu = async (req, res) => {
 
         await newMenu.save();
         console.log("Menu created successfully");
+        
+
 
         try {
             const allMenus = await menu.find({});
-            res.render("menus/menu", { allMenus });
+            res.render("menus/menu", { allMenus, successMsg: "Menu created successfully" });
+
         } catch (error) {
             console.error("Error fetching menus:", error);
             res.status(500).send("Internal Server Error");
