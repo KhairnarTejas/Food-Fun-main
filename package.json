@@ -27,9 +27,6 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0",
-    "build": "next build",
-    "start": "node app.js",
-    "dev": "next dev"
-  
+    "wt-lab": "file:"
   }
 }
