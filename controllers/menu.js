@@ -1,6 +1,6 @@
 const menu = require("../models/menu");
 const mongoose = require("mongoose");
-
+const { v4: uuidv4 } = require('uuid');
 
 // Display a list of all menus
 exports.index = async (req, res) => {
@@ -27,6 +27,7 @@ exports.createMenu = async (req, res) => {
         const { name, description, foodType, speciality, price } = req.body;
         let url, filename;
 
+        
         // Check if a file was uploaded with the request
         if (req.file) {
             url = req.file.path;
@@ -45,6 +46,8 @@ exports.createMenu = async (req, res) => {
             // owner: req.user._id // Assuming you have user authentication and want to associate the menu with the current user
         });
 
+        let uniqueUsername = `menu-${uuidv4()}`;
+        newMenu.username = uniqueUsername;
         // Only set image properties if a file was uploaded
         if (url && filename) {
             newMenu.image = {
